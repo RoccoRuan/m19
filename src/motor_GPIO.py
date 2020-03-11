@@ -2,12 +2,14 @@
 import rospy, gpiozero, time
 from std_msgs.msg import String
 
+commands = ["left",0,"back",0,"up",0]
+
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-    commands=split(data.data)
-    commands[2]=int(commands[2])
-    commands[4]=int(commands[4])
-    commands[6]=int(commands[6])
+    global commands=split(data.data)
+    global commands[2]=int(commands[2])
+    global commands[4]=int(commands[4])
+    global commands[6]=int(commands[6])
 
 def listener():
 
@@ -25,9 +27,7 @@ def listener():
     x_speedPin = gpiozero.LED(3)
     y_speedPin = gpiozero.LED(5)
     z_speedPin = gpiozero.LED(7)
-    x_speed = 0
-    y_speed = 0
-    z_speed = 0
+
 
     while not rospy.is_shutdown():
 #directional pins
