@@ -6,7 +6,7 @@ commands = ["left",0,"back",0,"up",0]
 
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
-    global commands=split(data.data)
+    global commands=(data.data).split
     global commands[2]=int(commands[2])
     global commands[4]=int(commands[4])
     global commands[6]=int(commands[6])
