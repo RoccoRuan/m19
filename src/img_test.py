@@ -23,9 +23,9 @@ def findcircle(imagepath):
     final = resized.copy()
     hsv = cv2.cvtColor(resized, cv2.COLOR_BGR2HSV)
     #make colour filter
-    g = [np.array([40,40,100]), np.array([100,100,300])]
+    g = [np.array([40,40,90]), np.array([100,100,380])]
     r = [np.array([120,50,80]), np.array([300,130,160])]
-    b = [np.array([50,50,70]), np.array([150,150,380])]
+    b = [np.array([80,80,105]), np.array([150,150,380])]
     colours = [b,r,g]
     for i in colours:
         hsv = cv2.cvtColor(resized, cv2.COLOR_BGR2HSV)
